@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import classNames from 'classnames';
 
 const api = {
     key: "017c0f5c92505c6b27975d83ca63206e",
@@ -6,7 +7,7 @@ const api = {
   };
 const HavaDurum = () => {
     const [search, setSearch] = useState("");
-  const [weather, setWeather] = useState(null); // Initialize as null
+    const [weather, setWeather] = useState(null); // Initialize as null
 
   const searchPressed = () => {
     fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
