@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import classNames from 'classnames';
+import clear from './img/clear.png'
+import cloudy from './img/cloudy.png'
+import rain from './img/rain.png'
+import snowing from './img/snowing.png'
+import './Havavdurumu.css'
 
 const api = {
     key: "017c0f5c92505c6b27975d83ca63206e",
@@ -43,21 +48,40 @@ const HavaDurum = () => {
                 "bg-[#213a80]": weather.weather[0].main == "Rain",
                 "bg-[#0d1542]": weather.weather[0].main == "Snow",
                 })}>
-          
-            <div className="sıcaklık flex p-2">
-              {/* Temperature */}
-              <p className="text-3xl">{weather.main.temp}°C</p>
-            </div>
-
-            <div className="havadurumu flex mb-8">
-              {/* havaDurumu */}
-              <p>{weather.weather[0].main}</p>
-            </div>
 
             <div className="yer">
               {/* Location */}
               <p>{`${weather.name}, ${weather.sys.country}`}</p>
             </div>
+
+            <div className='img'>
+                {weather.weather[0].main === "Clear" && (
+                    <img src={clear} alt="Clear Weather"/>
+                )}
+                {weather.weather[0].main === "Rain" && (
+                    <img src={rain} alt="Clear Weather"/>
+                )}
+                {weather.weather[0].main === "Clouds" && (
+                    <img src={cloudy} alt="Clear Weather"/>
+                )}
+                {weather.weather[0].main === "Snowing" && (
+                    <img src={snowing} alt="Clear Weather"/>
+                )}
+            </div>
+          
+            <div className="sıcaklık flex p-2">
+           
+              {/* Temperature */}
+              <p className="text-3xl">{weather.main.temp}°C</p>
+            </div>
+
+            <div className="havadurumu">
+              {/* havaDurumu */}
+                
+              <p>{weather.weather[0].main}</p>
+            </div>
+
+            
           </div>
         </>
       )}
