@@ -19,6 +19,7 @@ const HavaDurum = () => {
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
+        console.log(result);
         
       });
   };
@@ -79,6 +80,18 @@ const HavaDurum = () => {
               {/* havaDurumu */}
                 
               <p>{weather.weather[0].main}</p>
+            </div>
+
+            <div className='maxmini'>
+              <div className='min'>
+                <h5>Min</h5>
+                <p>{weather.main.temp_min}°</p>
+              </div>
+              <div className='space'></div>
+              <div className='max'>
+                <h5>Max</h5>
+                <p>{weather.main.temp_max}°</p>
+              </div>
             </div>
 
             
