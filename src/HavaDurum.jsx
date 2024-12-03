@@ -65,7 +65,7 @@ const HavaDurum = () => {
                 {weather.weather[0].main === "Clouds" && (
                     <img src={cloudy} alt="Clear Weather"/>
                 )}
-                {weather.weather[0].main === "Snowing" && (
+                {weather.weather[0].main === "Snow" && (
                     <img src={snowing} alt="Clear Weather"/>
                 )}
             </div>
